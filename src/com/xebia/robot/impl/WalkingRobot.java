@@ -5,7 +5,7 @@ import com.xebia.robot.config.Constant;
 import com.xebia.robot.enums.State;
 
 public class WalkingRobot implements WeightCarrierRobot {
-	
+
 	private Settings settings;
 
 	public WalkingRobot() {
@@ -33,32 +33,29 @@ public class WalkingRobot implements WeightCarrierRobot {
 		settings.setState(State.OFF);
 		Display.message(Constant.POWER_OFF_MESSAGE);
 	}
-	
-	
+
 	@Override
 	public void walk() {
-				if (settings.getState().is(State.OFF)) {
-					Display.message(Constant.POWER_OFF_MESSAGE);
-				}else if (settings.getBattery().getLevel()<= 0) {
-					Display.message(Constant.BATTERY_DISCHARGED_MESSAGE);
-					off();
-				} else if (settings.getBattery().getLevel() <= settings.getBattaryAlertLevel()) {
-					Display.message(Constant.BATTERY_LOW_MESSAGE);
-				}
-				else if(settings.getLoad()>settings.getWeightThreshold()){
-					Display.message(Constant.OVERWEIGHT_MESSAGE);
-					settings.setState(State.OFF);
-				}
-				 else {
-					settings.setState(State.WALKING);
-					Display.message(Constant.WALKING_MESSAGE);
-					settings.updateBatteryLevel();
-					Display.message(String.format(Constant.BATTERY_LEVEL_MESSAGE,settings.getBattery().getLevel(),"%"));
-				}
-				
+		if (settings.getState().is(State.OFF)) {
+			Display.message(Constant.POWER_OFF_MESSAGE);
+		} else if (settings.getBattery().getLevel() <= 0) {
+			Display.message(Constant.BATTERY_DISCHARGED_MESSAGE);
+			off();
+		} else if (settings.getBattery().getLevel() <= settings.getBattaryAlertLevel()) {
+			Display.message(Constant.BATTERY_LOW_MESSAGE);
+		} else if (settings.getLoad() > settings.getWeightThreshold()) {
+			Display.message(Constant.OVERWEIGHT_MESSAGE);
+			settings.setState(State.OFF);
+		} else {
+			settings.setState(State.WALKING);
+			Display.message(Constant.WALKING_MESSAGE);
+			settings.updateBatteryLevel();
+			Display.message(String.format(Constant.BATTERY_LEVEL_MESSAGE, settings.getBattery().getLevel(), "%"));
+		}
+
 	}
 
-    @Override
+	@Override
 	public Settings getSettings() {
 		return settings;
 	}
