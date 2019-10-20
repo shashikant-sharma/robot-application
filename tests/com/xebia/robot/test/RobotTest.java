@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.xebia.robot.WeightCarrierRobot;
+import com.xebia.robot.WalkWithLoadRobot;
 import com.xebia.robot.impl.RobotControl;
 import com.xebia.robot.impl.WalkingRobot;
 
@@ -12,7 +12,7 @@ class RobotTest {
 
 	@Test
 	void distance_3_5_weight_0() {
-		WeightCarrierRobot robot = new WalkingRobot();
+		WalkWithLoadRobot robot = new WalkingRobot();
 		robot.setDistance(3.5);
 		RobotControl control = new RobotControl(robot);
 		control.on();
@@ -22,7 +22,7 @@ class RobotTest {
     
 	@Test
 	void distance_2_weight_3() {
-		WeightCarrierRobot robot = new WalkingRobot();
+		WalkWithLoadRobot robot = new WalkingRobot();
 		robot.setDistance(2);
 		robot.load(3);
 		RobotControl control = new RobotControl(robot);
@@ -33,7 +33,7 @@ class RobotTest {
 	
 	@Test
 	void distance_0_weight_12() {
-		WeightCarrierRobot robot = new WalkingRobot();
+		WalkWithLoadRobot robot = new WalkingRobot();
 		robot.setDistance(0);
 		robot.load(12);
 		RobotControl control = new RobotControl(robot);

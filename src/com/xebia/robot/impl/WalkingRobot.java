@@ -1,10 +1,10 @@
 package com.xebia.robot.impl;
 
-import com.xebia.robot.WeightCarrierRobot;
+import com.xebia.robot.WalkWithLoadRobot;
 import com.xebia.robot.config.Constant;
 import com.xebia.robot.enums.State;
 
-public class WalkingRobot implements WeightCarrierRobot {
+public class WalkingRobot implements WalkWithLoadRobot {
 
 	private Settings settings;
 

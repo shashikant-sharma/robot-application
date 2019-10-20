@@ -1,6 +1,6 @@
 package com.xebia.robot;
 
-public interface WalkableRobot extends Robot {
+public interface WalkableRobot{
 	
 	public void walk();
 	

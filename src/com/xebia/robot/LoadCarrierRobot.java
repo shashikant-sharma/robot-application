@@ -1,6 +1,6 @@
 package com.xebia.robot;
 
-public interface WeightCarrierRobot extends WalkableRobot {
+public interface LoadCarrierRobot {
   
 	public void load(int load);
 }
