@@ -61,8 +61,7 @@ public class Settings {
 	public void updateBatteryLevel() {
 	   double batteryConsumed = (100/perChargeWalkLimit)*walkingDistance;
 	   batteryConsumed +=load*2;
-	   double batteryLevel = this.getBattery().getLevel()-batteryConsumed;
-	   batteryLevel = batteryLevel<=0?0:batteryLevel;
+	   double batteryLevel = batteryConsumed>this.getBattery().getLevel()?0:this.getBattery().getLevel()-batteryConsumed;
        this.battery.setLevel(batteryLevel);
 	}
 
