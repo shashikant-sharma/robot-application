@@ -1,6 +1,6 @@
 package com.xebia.robot;
 
-import com.xebia.robot.impl.DefaultSettings;
+import com.xebia.robot.impl.Settings;
 
 public interface Robot  {
    
@@ -8,5 +8,5 @@ public interface Robot  {
 	
 	public void off();
 	
-	public DefaultSettings getSettings();
+	public Settings getSettings();
 }

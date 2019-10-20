@@ -1,12 +1,12 @@
 package com.xebia.robot.command;
 
-import com.xebia.robot.Walkable;
+import com.xebia.robot.WalkableRobot;
 
 public class WalkCommand implements Command {
     
-    private Walkable robot;
+    private WalkableRobot robot;
 	
-	public WalkCommand(Walkable robot) {
+	public WalkCommand(WalkableRobot robot) {
 		this.robot =robot;
 	}
 	

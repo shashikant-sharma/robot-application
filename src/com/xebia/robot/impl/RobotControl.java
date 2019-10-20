@@ -1,6 +1,6 @@
 package com.xebia.robot.impl;
 
-import com.xebia.robot.Walkable;
+import com.xebia.robot.WeightCarrierRobot;
 import com.xebia.robot.command.Command;
 import com.xebia.robot.command.OffCommand;
 import com.xebia.robot.command.OnCommand;
@@ -8,9 +8,9 @@ import com.xebia.robot.command.WalkCommand;
 
 public class RobotControl {
 	
-	private Walkable robot;
+	private WeightCarrierRobot robot;
 	
-	public RobotControl(Walkable robot) {
+	public RobotControl(WeightCarrierRobot robot) {
 		this.robot = robot;
 	}
 

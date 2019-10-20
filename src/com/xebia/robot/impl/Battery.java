@@ -2,17 +2,17 @@ package com.xebia.robot.impl;
 
 public class Battery {
 	
-	private int level;
+	private double level;
 	
-	public Battery(int level) {
+	public Battery(double level) {
 		this.level = level;
 	}
 
-	public int getLevel() {
+	public double getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(double level) {
 		this.level = level;
 	}
 	
