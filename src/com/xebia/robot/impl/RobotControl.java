@@ -2,8 +2,7 @@ package com.xebia.robot.impl;
 
 import com.xebia.robot.WalkWithLoadRobot;
 import com.xebia.robot.command.Command;
-import com.xebia.robot.command.OffCommand;
-import com.xebia.robot.command.OnCommand;
+import com.xebia.robot.command.OnOffCommand;
 import com.xebia.robot.command.WalkCommand;
 
 public class RobotControl {
@@ -14,15 +13,8 @@ public class RobotControl {
 		this.robot = robot;
 	}
 
-	public void on() {
-		Command command = new OnCommand(robot);
-		RobotCommand context = new RobotCommand(command);
-		context.execute();
-	}
-
-	public void off() {
-		
-		Command command = new OffCommand(robot);
+	public void onOff() {
+		Command command = new OnOffCommand(robot);
 		RobotCommand context = new RobotCommand(command);
 		context.execute();
 	}

@@ -1,5 +1,6 @@
 package com.xebia.robot.impl;
 
+import com.xebia.robot.enums.Light;
 import com.xebia.robot.enums.State;
 
 public class Settings {
@@ -15,6 +16,9 @@ public class Settings {
 	private int weightThreshold = 10;
 
 	private State state = State.OFF;
+	
+	private Light light = Light.OFF;
+	
 
 	private final Battery battery = new Battery(100);
 
@@ -38,6 +42,14 @@ public class Settings {
 		this.state = state;
 	}
 
+	public Light getLight() {
+		return light;
+	}
+
+	public void setLight(Light light) {
+		this.light = light;
+	}
+
 	public int getWeightThreshold() {
 		return weightThreshold;
 	}
@@ -58,11 +70,11 @@ public class Settings {
 		this.load = load;
 	}
 
-	public void updateBatteryLevel() {
+	public double batteryRequired() {
 	   double batteryConsumed = (100/perChargeWalkLimit)*walkingDistance;
 	   batteryConsumed +=load*2;
-	   double batteryLevel = batteryConsumed>this.getBattery().getLevel()?0:this.getBattery().getLevel()-batteryConsumed;
-       this.battery.setLevel(batteryLevel);
+	   return batteryConsumed>this.getBattery().getLevel()?0:this.getBattery().getLevel()-batteryConsumed;
+       
 	}
 
 }

@@ -10,7 +10,7 @@ public class Constant {
 	
 	public static final String WALKING_MESSAGE = "Robot is walking...";
 	
-	public static final String OVERWEIGHT_MESSAGE = "OverWeight..";
+	public static final String OVERWEIGHT_MESSAGE = "Overweight";
 	
 	public static final String POWER_ON_MESSAGE = "Robot is in power on mode.";
 	

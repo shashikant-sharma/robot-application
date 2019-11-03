@@ -1,13 +1,13 @@
 package com.xebia.robot.exception;
 
-public class RobotStateException extends RuntimeException{
+public class ObjectOverWeightException extends RuntimeException{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public RobotStateException(String message) {
+	public ObjectOverWeightException(String message) {
         super(message);
     }
 

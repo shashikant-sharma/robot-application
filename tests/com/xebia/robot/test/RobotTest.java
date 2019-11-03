@@ -2,9 +2,11 @@ package com.xebia.robot.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.xebia.robot.WalkWithLoadRobot;
+import com.xebia.robot.exception.ObjectOverWeightException;
 import com.xebia.robot.impl.RobotControl;
 import com.xebia.robot.impl.WalkingRobot;
 
@@ -15,7 +17,7 @@ class RobotTest {
 		WalkWithLoadRobot robot = new WalkingRobot();
 		robot.setDistance(3.5);
 		RobotControl control = new RobotControl(robot);
-		control.on();
+		control.onOff();
 		control.walk();
 		assertEquals(30,robot.getSettings().getBattery().getLevel(),"Battery level should be 30 %");
 	}
@@ -26,7 +28,7 @@ class RobotTest {
 		robot.setDistance(2);
 		robot.load(3);
 		RobotControl control = new RobotControl(robot);
-		control.on();
+		control.onOff();
 		control.walk();
 		assertEquals(54,robot.getSettings().getBattery().getLevel(),"Battery level should be 54 %");
 	}
@@ -37,7 +39,9 @@ class RobotTest {
 		robot.setDistance(0);
 		robot.load(12);
 		RobotControl control = new RobotControl(robot);
-		control.on();
-		control.walk();
+		control.onOff();
+		Assertions.assertThrows(ObjectOverWeightException.class, () -> {
+			control.walk();
+		});
 	}
 }

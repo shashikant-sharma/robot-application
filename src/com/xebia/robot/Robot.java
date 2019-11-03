@@ -4,9 +4,7 @@ import com.xebia.robot.impl.Settings;
 
 public interface Robot  {
    
-	public void on();
-	
-	public void off();
+	public void onOff();
 	
 	public Settings getSettings();
 }
