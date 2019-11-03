@@ -44,6 +44,7 @@ public class WalkingRobot implements WalkWithLoadRobot,Scanner {
 		} else {
 			settings.setState(State.WALKING);
 			Display.message(Constant.WALKING_MESSAGE);
+			this.settings.getBattery().updateLevel(this.settings.batteryRequired());
 			Display.message(String.format(Constant.BATTERY_LEVEL_MESSAGE, settings.getBattery().getLevel(), "%"));
 		}
 

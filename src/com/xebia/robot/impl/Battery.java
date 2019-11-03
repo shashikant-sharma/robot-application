@@ -15,6 +15,9 @@ public class Battery {
 	public void setLevel(double level) {
 		this.level = level;
 	}
+	public void updateLevel(double level) {
+		this.level -= level;
+	}
 	
 	
 
