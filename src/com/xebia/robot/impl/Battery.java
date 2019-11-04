@@ -16,7 +16,11 @@ public class Battery {
 		this.level = level;
 	}
 	public void updateLevel(double level) {
-		this.level -= level;
+		if(this.level<level) {
+			this.level =0;
+		}else {
+		  this.level -= level;
+		}
 	}
 	
 	

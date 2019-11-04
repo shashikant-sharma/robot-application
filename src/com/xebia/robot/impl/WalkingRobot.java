@@ -1,8 +1,5 @@
 package com.xebia.robot.impl;
 
-import java.util.Objects;
-import java.util.Random;
-
 import com.xebia.robot.Scanner;
 import com.xebia.robot.WalkWithLoadRobot;
 import com.xebia.robot.config.Constant;
@@ -66,12 +63,8 @@ public class WalkingRobot implements WalkWithLoadRobot,Scanner {
 	}
 
 	@Override
-	public int scan(byte[] bytes) {
-		 Random random=new Random();
-	        if(Objects.isNull(bytes))
-	            throw new ScanException("Scan Failure");
-	        int scannedNo=random.nextInt();
-	        return Math.abs(scannedNo);
+	public int scan() {
+		throw new ScanException("Scan Failure");
 	}
 
 }

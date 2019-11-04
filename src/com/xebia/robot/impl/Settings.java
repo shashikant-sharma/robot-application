@@ -73,7 +73,7 @@ public class Settings {
 	public double batteryRequired() {
 	   double batteryConsumed = (100/perChargeWalkLimit)*walkingDistance;
 	   batteryConsumed +=load*2;
-	   return batteryConsumed>this.getBattery().getLevel()?0:this.getBattery().getLevel()-batteryConsumed;
+	   return batteryConsumed;
        
 	}
 

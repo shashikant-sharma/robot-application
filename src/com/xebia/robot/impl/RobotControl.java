@@ -3,6 +3,7 @@ package com.xebia.robot.impl;
 import com.xebia.robot.WalkWithLoadRobot;
 import com.xebia.robot.command.Command;
 import com.xebia.robot.command.OnOffCommand;
+import com.xebia.robot.command.ScanCommand;
 import com.xebia.robot.command.WalkCommand;
 
 public class RobotControl {
@@ -21,6 +22,12 @@ public class RobotControl {
 
 	public void walk() {
 		Command command = new WalkCommand(robot);
+		RobotCommand context = new RobotCommand(command);
+		context.execute();
+	}
+	
+	public void scan() {
+		Command command = new ScanCommand(robot);
 		RobotCommand context = new RobotCommand(command);
 		context.execute();
 	}
